@@ -10,7 +10,7 @@ body {
   background-size: auto; 
   color: #000000;
   height: 100vh;
-  height: 100dvh; /* スマホのアドレスバーによる見切れ防止 */
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,14 +64,15 @@ body {
   flex-shrink: 0;
   height: auto;
 }
-.picture1{
+
+.picture1 {
   width: 50%;
   height: 50%;
   object-fit: cover;
   display: block;
 }
 
-.picture2{
+.picture2 {
   width: 90%;
   height: 90%;
   object-fit: cover;
@@ -314,19 +315,18 @@ body {
   color: #64748b;
 }
 
-/* =========================================
-   スマホ対応（画面幅 639px 以下）の追加ルール
-   ========================================= */
+/* スマホ対応（画面幅 639px 以下） */
 @media (max-width: 639px) {
   .header {
-    flex-wrap: wrap;
-    padding: 8px 10px;
-    gap: 6px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+    gap: 8px;
   }
 
   .header-left {
     width: 100%;
-    gap: 8px;
+    gap: 10px;
   }
 
   .logo {
@@ -339,22 +339,22 @@ body {
   }
 
   .title {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .subtitle {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .header-actions {
     width: 100%;
     justify-content: flex-end;
-    gap: 4px;
+    gap: 6px;
   }
 
   .btn-link, .btn-reset {
     font-size: 11px;
-    padding: 4px 8px;
+    padding: 5px 10px;
   }
 
   .tabs, .chips {
@@ -382,7 +382,7 @@ body {
   }
 
   .form input {
-    font-size: 16px; /* iPhone等でタップ時に画面が自動ズームされるのを防ぐ */
+    font-size: 16px;
     padding: 8px 10px;
   }
 
