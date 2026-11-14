@@ -10,6 +10,7 @@ body {
   background-size: auto; 
   color: #000000;
   height: 100vh;
+  height: 100dvh; /* スマホのアドレスバーによる見切れ防止 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,4 +312,82 @@ body {
 
 .note a {
   color: #64748b;
+}
+
+/* =========================================
+   スマホ対応（画面幅 639px 以下）の追加ルール
+   ========================================= */
+@media (max-width: 639px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .header-left {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 56px;
+  }
+
+  .picture1 {
+    width: 85%;
+    height: 85%;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+
+  .btn-link, .btn-reset {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .tabs, .chips {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .messages {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .bubble {
+    max-width: 84%;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .footer {
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+  }
+
+  .form input {
+    font-size: 16px; /* iPhone等でタップ時に画面が自動ズームされるのを防ぐ */
+    padding: 8px 10px;
+  }
+
+  .form button {
+    padding: 0 14px;
+    font-size: 13px;
+  }
 }
