@@ -52,55 +52,61 @@
   <script>
     const KNOWLEDGE_BASE = [
       {
-        id: 'map', category: '校内マップ', roles: ['all', 'visitor', 'student_prospect', 'current_student'],
+        id: 'lisa', category: '学校概要', roles: ['all','current_student','student_prospect','visitor'],
+        q: 'LiSAの由来と学校の特徴は',
+        kw: ['lisa', 'リサ', '特徴', 'どんな学校', '総合産業', '由来', '意味', '学科'],
+        a: '\nLiSAは Liberal（自由・教養）、Internationality（国際性）、\nScience & Arts（科学と芸術・技術）、Academy（学び舎）の頭文字です。\n全国唯一の「総合産業科（単位制）」を設置し、工学、情報、環境バイオ、科学、リベラルアーツ分野など\n幅広い選択科目から自分の時間割を組み立てられます！'
+      },
+      {
+        id: 'lisa', category: 'LiSAPO', roles: ['all','current_student','student_prospect','visitor'],
+        q: 'LiSAPOとは',
+        kw: ['LiSAPO','りさぽ','リサポ'],
+        a: '\nLiSAPOはLiSA校への疑問、学校生活を来校者や受験する中学生にもわかりやすく聞けるチャットBotです！\n気軽に聞いてね！'
+      },
+      {
+        id: 'access', category: 'アクセス', roles: ['all','current_student','student_prospect','visitor'],
+        q: '駅からのアクセス・行き方',
+        kw: ['アクセス', '駅', '行き方', '住所', '相模大野', '徒歩', '地図', '駐車場'],
+        a: '\n・小田急線「相模大野駅」北口より徒歩約13分（相模大野中央公園の隣）\n・住所：〒252-0307 神奈川県相模原市南区文京1丁目11−1\n※来校者用の駐車場はありませんので公共交通機関をご利用ください！'
+      },
+      {
+        id: 'map', category: '校内マップ', roles: ['all','current_student','student_prospect','visitor'],
         q: '校内マップ・教室や棟の配置',
         kw: ['マップ', 'map', '校内図', '配置', '教室', '案内図', '場所', '東棟', '西棟'],
         a: '\n校内の施設や教室の配置は、デジタル校内マップ（LiSAナビ）から確認できます！\n・校内マップ：https://lisanavi.github.io/map/\n【主なエリア】\n・1階 事務室、視聴覚室、会議室、食堂、体育館など\n・2階 一般学習室、ロッカースペース、更衣室\n・3階 一般学習室、進路相談室、コンピューター室、美術室\n・4階 一般学習室、音楽室、調理室、被服室\nなどなどの様々な教室あります！'
       },
       {
-        id: 'lisa', category: '学校概要', roles: ['all', 'student_prospect', 'visitor'],
-        q: 'LiSAの由来と学校の特徴は',
-        kw: ['lisa', 'リサ', '特徴', 'どんな学校', '総合産業', '由来', '意味', '学科', 'りさぽ','LiSAPO'],
-        a: '\nLiSAは Liberal（自由・教養）、Internationality（国際性）、\nScience & Arts（科学と芸術・技術）、Academy（学び舎）の頭文字です。\n全国唯一の「総合産業科（単位制）」を設置し、理数・情報・工学・環境・デザイン・国際など\n幅広い選択科目から自分の時間割を組み立てられます！'
-      },
-      {
-        id: 'access', category: 'アクセス', roles: ['all', 'visitor', 'student_prospect'],
-        q: '駅からのアクセス・行き方',
-        kw: ['アクセス', '駅', '行き方', '住所', '相模大野', '徒歩', '地図', '駐車場'],
-        a: '\n・小田急線「相模大野駅」北口より徒歩約13分（相模大野中央公園の隣）\n・住所：〒252-0303 相模原市南区相模大野4-1-1\n※来校者用の駐車場はありませんので公共交通機関をご利用ください！'
-      },
-      {
-        id: 'credit', category: '単位制・学び', roles: ['all', 'student_prospect', 'current_student'],
+        id: 'credit', category: '単位制・学び', roles: ['all','student_prospect','visitor'],
         q: '単位制・選択科目の仕組みについて',
         kw: ['単位', '選択科目', '時間割', '授業', '理系', '文系', '情報', '実験', '実習'],
-        a: '\n学年制ではなく「単位制」です。1年次は共通科目を中心に学び、\n2・3年次は理数・工学・情報・ライフサイエンス・アート・国際などの豊富な選択科目群から進路に合わせて履修できます！'
+        a: '\n学年制ではなく「単位制」です。1年次は共通科目を中心に学び、\n2・3年次は工学、情報、環境バイオ、科学、リベラルアーツ分野などの豊富な選択科目群から進路に合わせて履修できます！'
       },
       {
-        id: 'rules', category: '校則・服装', roles: ['all', 'student_prospect', 'visitor'],
+        id: 'rules', category: '校則・服装', roles: ['all','current_student'],
         q: '制服や校則について',
         kw: ['制服', '私服', '標準服', '校則', '髪型', 'スマホ', 'バイト', '服装'],
-        a: '\n式典など指定日以外は「標準服」または「私服※」のどちらでも登校可能です。（※TPOに合わせた服装）\n生徒の自主性・自律を重んじる校風です！'
+        a: '\n校則は他の高校と比べゆるく制服については式典など指定日以外は「標準服」または「私服※」のどちらでも登校可能です。（※TPOに合わせた服装）\n生徒の自主性・自律を重んじる校風です！\n詳しくは「公式サイト」の「生徒心得」をご確認ください'
       },
       {
-        id: 'teijisei', category: '施設のルール', roles: ['all', 'current_student', 'visitor'],
+        id: 'teijisei', category: '施設のルール', roles: ['all','current_student','visitor'],
         q: '完全下校時刻は？',
         kw: ['定時制', '下校', '17時', '17:00', '完全下校', '部活', '共有'],
         a: '\n全日制と定時制で校舎を共有しているため、全日制の完全下校時刻は原則17:00です！'
       },
       {
-        id: 'events', category: '学校行事', roles: ['all', 'student_prospect', 'visitor', 'current_student'],
+        id: 'events', category: '学校行事', roles: ['all','current_student','student_prospect','visitor'],
         q: '文化祭などの行事は？',
         kw: ['文化祭','行事', '体育祭', '修学旅行', 'イベント'],
-        a: '\n【主な行事】\n5月に行われる年次別の遠足ではグループに分かれて行動し\n6月に行われる赤団、青団、緑団、黄団に分かれる体育祭ではリレーやダンスなどの楽しい種目を行い\n9月では修学旅行に加え、文化祭が開催されます\n文化祭ではクラス企画や文化部発表に加え、総合産業高校ならではの技術・研究展示が人気です！'
+        a: '\n【主な行事】\n5月に行われる年次別の遠足ではグループに分かれて行動し\n6月に行われる赤団、青団、緑団、黄団に分かれる体育祭ではリレーやダンスなどの楽しい種目を行い\n9月では修学旅行に加え、文化祭（LiSA Papillon Festival）が開催されます\n文化祭ではクラス企画や文化部発表に加え、総合産業高校ならではの技術・研究展示が人気です！'
       },
       {
-        id: 'admission', category: '受験・説明会', roles: ['all', 'student_prospect', 'visitor'],
+        id: 'admission', category: '受験・説明会', roles: ['all','student_prospect',],
         q: '学校説明会や入試の情報は？',
         kw: ['入試', '受検', '受験', '説明会', 'オープンスクール', '体験入学', '倍率'],
         a: '\n夏〜秋にかけて学校説明会・体験授業が実施されます。\n具体的な日程や申込方法、入学者選抜の選考基準は公式サイトの「受験生の方へ」をご確認ください！'
       },
       {
-        id: 'office', category: '欠席連絡の方法', roles: ['all', 'current_student', 'visitor'],
+        id: 'office', category: '欠席連絡の方法', roles: ['all','current_student'],
         q: '欠席連絡の方法は？',
         kw: ['事務室', '欠席', '遅刻'],
         a: '\n欠席・遅刻連絡は学校指定の連絡システム（または朝の受付時間に電話）で保護者からご連絡ください。\n詳細は公式サイトをご確認ください！'
