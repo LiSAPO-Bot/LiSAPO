@@ -35,7 +35,6 @@ body {
   }
 }
 
-/* ヘッダー */
 .header {
   background: linear-gradient(135deg, #5f9ea0, #163d6e 55%, #0f294a);
   color: #fff;
@@ -120,7 +119,6 @@ body {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* タブ */
 .tabs {
   display: flex;
   gap: 6px;
@@ -147,7 +145,6 @@ body {
   border-color: #163d6e;
 }
 
-/* チャットエリア */
 .messages {
   flex: 1;
   overflow-y: auto;
@@ -215,7 +212,6 @@ body {
   margin-bottom: 4px;
 }
 
-/* クイック質問チップ */
 .chips-area {
   padding: 8px 14px;
   background: #f1f5f9;
@@ -262,7 +258,6 @@ body {
   height: auto;
 }
 
-/* 入力フォーム */
 .footer {
   padding: 10px 14px;
   background: linear-gradient(135deg, #5f9ea0, #163d6e 55%, #0f294a);
@@ -315,7 +310,7 @@ body {
   color: #64748b;
 }
 
-/* スマホ対応（画面幅 639px 以下） */
+/*スマホ対応*/
 @media (max-width: 639px) {
   .header {
     flex-direction: column;
